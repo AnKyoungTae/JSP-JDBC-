@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<style>
+    input{
+        margin: 5px;
+    }
+    table{
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      border-style: solid;
+      border-color: black;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+		<ul class="nav justify-content-end">
+			<li class="nav-item">
+			  <a class="btn btn-dark" aria-current="page" href="login.html">로그인</a>
+			</li>
+			<li class="nav-item">
+			  <a class="btn btn-dark" href="join.html">회원가입</a>
+			</li>
+      <li class="nav-item">
+				<a class="btn btn-dark" href="notice">게시판</a>
+			</li>
+		</ul>
+	</nav>
+
+    <!--회원가입 양식-->
+      <div style="margin: 30px;">
+          <form action="join" name="addjoin" method="post">
+              <table>
+                <tr>
+                  <td>아이디:</td>
+                  <td><input type="text" name="userId"></td>
+                </tr>
+                <tr>
+                  <td>비밀번호:</td>
+                  <td><input type="password" name="userPs"></td>
+                </tr>
+                <tr>
+                  <td>이름:</td>
+                  <td><input type="text" name="userName"></td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <input type="submit" value="회원가입" onclick="checkfield()">
+                    <input type="button" value="취소" onclick="moveHome()">
+                  </td>
+                </tr>
+              </table>
+              
+          </form>
+      </div>
+
+
+    <script>
+      function moveHome(){
+        location.href = "index.html";
+      }
+      
+      function checkfield(){
+        var f = document.addjoin;
+
+
+        if(f.userId.value == ""){
+          alert("닉네임을 입력하세요.");
+          f.userId.focus();
+          return false;
+        }
+        else if(f.userPs.value == ""){
+          alert("비밀번호를 입력하세요.");
+          f.userPs.focus();
+          return false;
+        }
+        else if(f.userName.value == ""){
+          alert("이름을 입력하세요.");
+          f.userName.focus();
+          return false;
+        }
+        else{
+            alert("회원가입이 완료 되었습니다.");
+            return true;
+        }
+      }
+      
+    </script>
+	<script src="../java/js/bootstrap.js"></script>
+</body>
+</html>

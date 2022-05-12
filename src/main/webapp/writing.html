@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<style>
+	.container{
+		position: relative;
+        top: 200px;
+		text-align: center;
+	}
+	table{
+		border-style: solid;
+		border-color: black;
+		margin-left: auto;
+		margin-right: auto;
+	}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<ul class="nav justify-content-end">
+			<li class="nav-item">
+			  <a class="btn btn-dark" aria-current="page" href="login.html">로그인</a>
+			</li>
+			<li class="nav-item">
+			  <a class="btn btn-dark" href="join.html">회원가입</a>
+			</li>
+			<li class="nav-item">
+				<a class="btn btn-dark" href="notice">게시판</a>
+			</li>
+		  </ul>
+	</nav>
+
+    <div class="container">
+        <form action="writing" name="writ" method="get">
+			<table>
+				<tr>
+					<td>제목 : </td>
+					<td><input type="text" name="title"></td>
+				</tr>
+				<tr>
+					<td>작성자 : </td>
+					<td><input type="text" name="userId"></td>
+				</tr>
+				<tr>
+					<td>글내용 : </td>
+					<td><textarea cols="30" rows="5" name="content"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="작성" onclick="check()">
+						<input type="button" value="취소" onclick="moveHome()">
+					</td>
+				</tr>
+			</table>
+        </form>
+    </div>
+
+	<script>
+		function check(){
+			var w = document.writ;
+			
+			if(w.title.value == ""){
+				alert("제목을 작성해 주세요");
+				return false;
+			}
+			else if(w.userId.value == ""){
+				alert("작성자를 작성해 주세요");
+				return false;
+			}
+			else if(w.content.value == ""){
+				alert("게시글 내용을 작성해 주세요");
+				return false;
+			}
+			else{
+				alert("게시글이 등록 되었습니다.");
+				return true;
+			}
+		}
+	
+		function moveHome(){
+			location.href = "index.html";
+		}
+	</script>
+	<script src="../java/js/bootstrap.js"></script>
+</body>
+</html>

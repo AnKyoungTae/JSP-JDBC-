@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<style>
+    input{
+        margin: 5px;
+    }
+    table{
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      border-style: solid;
+      border-color: black;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+		<ul class="nav justify-content-end">
+			<li class="nav-item">
+			  <a class="btn btn-dark" aria-current="page" href="login.html">로그인</a>
+			</li>
+			<li class="nav-item">
+			  <a class="btn btn-dark" href="join.html">회원가입</a>
+			</li>
+      <li class="nav-item">
+				<a class="btn btn-dark" href="notice">게시판</a>
+			</li>
+		</ul>
+	</nav>
+      <div style="margin: 30px;">
+          <form action="login" name="addjoin" method="post">
+              <table>
+                <tr>
+                  <td>아이디:</td>
+                  <td><input type="text" name="userId"></td>
+                </tr>
+                <tr>
+                  <td>비밀번호:</td>
+                  <td><input type="password" name="userPs"></td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <input type="submit" value="로그인">
+                    <input type="button" value="회원가입" onclick="moveJoin()">
+                  </td>
+                </tr>
+              </table>
+              
+          </form>
+      </div>
+
+
+    <script>
+
+      function moveJoin(){
+        location.href = "join.html";
+      }
+
+    </script>
+	<script src="../java/js/bootstrap.js"></script>
+</body>
+</html>
